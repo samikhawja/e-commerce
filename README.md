@@ -87,6 +87,12 @@ Sami Khawja: Skhawja11@gmail.com
 Project Link: [GitHub](https://github.com/samikhawja/e-commerce)
 
 
+## Video Walkthrough
+Same video, different web players:
+
+[Screencastify](https://watch.screencastify.com/v/ToZtILbfEor7P4TeEdbo) | [Google Drive](https://drive.google.com/file/d/1TrFHc_ZaKl9mz9iJCKdE-m_lksamcsuA/view)
+
+
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [W3Schools](https://www.w3schools.com/)
