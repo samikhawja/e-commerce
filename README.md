@@ -27,7 +27,7 @@
 
 <img src="./assets/images/webpage.png" alt="Screenshot of terminal">
 
-For this application, I had to create an employee tracker application. The user will be able to see tables of the different departments, roles and employees while also being able to add departments, roles and employees and updating employees. Per usual, this tested my knowledge with node.js and made me do a bunch of research to deliver the best application to the user. Of course, this was a fun to make and quite the challenge!
+For this application, I had to create a backend e-commerce application. The user will be able to get, post, and delete for category, products and tags. For the category and tags, you can also update with a put! Per usual, this tested my knowledge with node.js and made me do a bunch of research to deliver the best application to the user. Of course, this was a fun to make and quite the challenge!
 
 The websites I used to help create the application are listed below in the <a href="#acknowledgements">acknowledgements</a>.
 
@@ -47,20 +47,27 @@ npm install
 ```
 then,
 ```
-node server.js
+npm run seed
+```
+then,
+```
+npm start
 ```
 
 
 <!-- USAGE EXAMPLES -->
 ## Code Snippets
 
-Below is a then statement I had to use in order to add or update depending on what the user chose. I had multiple then statements and at times it was confusing because in was template literal while adding what was selected and everything had to be perfect. I also added the the table so when the user adds or updates, they can see the changes right away!
+Below is a post request for the section 'Categories'. I used a try and within created a new variable that will create the new body. If there are any problems, it will catch either a 200 or 400 error.
 ```
-.then((select) => {
-  db.query(`INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES ("${select.employeeFirst}", "${select.employeeLast}", ${select.employeeRole}, ${select.employeeManager});`, (err, res) => {
-    console.log("Employee is updated to the database");
-    viewEmployees();
-})
+router.post('/', async (req, res) => {
+  try {
+    const categoryData = await Category.create(req.body);
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 ```
 
 
@@ -77,7 +84,7 @@ Sami Khawja: Skhawja11@gmail.com
 
 
 ## Project Links
-Project Link: [GitHub](https://github.com/samikhawja/employee_tracker)
+Project Link: [GitHub](https://github.com/samikhawja/e-commerce)
 
 
 <!-- ACKNOWLEDGEMENTS -->
